@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World using JavaScript</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        //create an Element
+        let heading = document.createElement('h1');
+
+        // Add Content in it
+        heading.innerHTML = 'Hello World using JavaScript';
+
+        //Access the element where we want to render the element
+        let root = document.querySelector('#root');
+
+        //Append the created element
+        root.appendChild(heading);
+    </script>
+</body>
+
+</html>
