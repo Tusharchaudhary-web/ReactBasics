@@ -1,3 +1,47 @@
+
+# Create a folder and open in VS Code
+mkdir project-name
+cd project-name
+code .
+
+# Initialize Git
+git init
+
+# Add all files
+git add .
+
+# Commit changes
+git commit -m "Initial commit"
+
+# Connect to GitHub repository
+git remote add origin <your-repo-link>
+
+# If branch is not main, rename it
+git branch -M main
+
+# Push code to GitHub
+git push -u origin main
+
+# If you had created a README file while making repository on GitHub
+git pull origin main --allow-unrelated-histories
+git add .
+git commit -m "Resolved conflicts"
+git push -u origin main
+
+# Common Error: index.lock
+# If error shows 'Unable to create .git/index.lock'
+# Run the below command to fix it
+Remove-Item -Force .git\index.lock
+
+# For future updates, just run
+git add .
+git commit -m "your message"
+git push
+                                                
+                                                
+                                                
+                                                
+                                                
                                                  ✅Inception✅ 
 
 1)  what is HTML Element?
