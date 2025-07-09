@@ -1,0 +1,33 @@
+{
+  "name": "reactbasics",
+  "version": "1.0.0",
+  "description": "This project is being made by Tushar Chaudhary",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tusharchaudhary-web/ReactBasics.git"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "babel",
+    "jsx",
+    "parcel",
+    "webpack"
+  ],
+  "author": "Tushar Chaudhary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tusharchaudhary-web/ReactBasics/issues"
+  },
+  "homepage": "https://github.com/Tusharchaudhary-web/ReactBasics#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
