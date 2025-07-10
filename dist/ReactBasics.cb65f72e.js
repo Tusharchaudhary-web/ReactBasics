@@ -683,7 +683,7 @@ var _clientDefault = parcelHelpers.interopDefault(_client);
 let heading = /*#__PURE__*/ (0, _reactDefault.default).createElement('h1', {
     id: 'ReactID',
     abc: 'xyz'
-}, 'Hello World using React'); //creating an element is core of React
+}, 'Hello World using React and JavaScript'); //creating an element is core of React
 //craete the root
 let root = (0, _clientDefault.default).createRoot(document.querySelector('#root')); // it is job of ReactDOM
 root.render(heading); // {} this object is used to give attributes to our tag

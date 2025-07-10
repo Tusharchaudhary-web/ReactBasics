@@ -234,30 +234,117 @@ Note : CDN links is not a recommended way to get React and ReactDOM into our pro
 Command : npm install react
           npm install react-dom
 
+Now these files/packages are installed and save in node_modules so we will import it from there
+
 Now import React and React-dom into our project(App.js)
 
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from "react"; ( these files are importing from node_modules)
+import ReactDOM from "react-dom/client";  ( these files are importing from node_modules)
 
 But after importing React and React-dom,it still give an error
 Error : Browser scripts(app.js) cannot have import or exports so we add type="module" in script
 
  <script type="module" src="App.js"></script>
+  “type="module" supports imports and exports, so we can load React and other modern JS modules in our project.”
 
-✅ Parcel bundler ✅ 
+1)  what is Parcel bundler ?✅ 
+Ans)  Parcel is a bundler and it takes HTML , CSS and JavaScript code and bundles them together and send it to the browser to run code.
 
-
-
-
-
-
-
+2) why do we use parcel in React projects?
+Because the browser doesn’t understand JSX. Parcel uses tools like Babel to convert JSX to JavaScript, bundles files, and runs the app.
 
 
+1) Dev Build
+2) Local server ( Host app to server)
+3) HMR = Hot Module Replacement : Parcel automatically refresh our page
+4) Parcel uses a file watching Algorithms -written in C++
+5) Caching : faster builds : Parcel is giving faster development experience due to caching
+6) Parcel do image optimisation
+7) Minification
+8) Bundling
+9) Compressing the file into smaller file so that they can be shipped to production
+10) consistent hashing
+11) code splitting
+12) Differential bundling - support older browsers
+13) Diagnostic
+14) Error Handling
+15) HTTPs
+16) Tree shaking -remove unused code
+
+Along with React ,we need packages,dependencies which help to make production ready large scale app
 
 
+4) What happens when you type npx parcel index.html?
+
+✅ Answer:
+npx is used to execute a npm package parcel and its source file is index.html
+
+1️) Creates a development build (bundles your HTML, CSS, JS for the browser)
+2️) Starts a local development server at http://localhost:1234 where you can see your app live.
+3) Watches your code for changes and auto-refreshes the browser.
+
+5) What is the difference between npm install parcel and npx parcel?
+Ans) npm install parcel installs Parcel in the project folder.
+     npx parcel runs Parcel without installing it permanently.
 
 
+6)  What is Development Build?
+Ans) ✅ It runs on a development server (local server).
+     ✅ It is used for testing and debugging during development.
+     ✅ Files are not optimized, so they are larger and easier to debug.
+     ✅ It runs on localhost:1234.
+     ✅ Command: npx parcel index.html
+
+7)   What is Production Build?
+Ans) ✅ It runs on a production server (remote server).
+     ✅ It is used for deployment and for running the app for real users online.
+     ✅ Files are optimized and minified, ready for production.
+     ✅ It is deployed on a live server.
+     ✅ Command: npx parcel build index.html
+
+      Local server (development server) is where we test our website on our own computer.
+      Production server (remote server) is where real users open the website on the internet after we upload it.
+
+
+7) ✅ Why does Parcel use port 1234?
+
+Ans ) It’s the default port Parcel uses for its dev server. You can also change it if needed.
+
+8) what is dist folder and Parcel Cache folder?
+✅ Parcel Cache: It is a temporary folder where Parcel stores all the processed files. It optimizes and bundles them and avoids reprocessing the same files again for faster builds.
+
+✅ Dist Folder: The dist folder contains production-ready, optimized files that can be deployed on a live server.
+Parcel saves production ready files into dist folder and now browser can took thses fils to tun the app.
+
+👉 Parcel uses cache for speed (with HMR) and creates the dist folder for deployment.
+
+
+✅ Q: Why should we put package.json and package-lock.json on Git but not node_modules, dist and .parcel-cache?
+
+Ans:We put package.json and package-lock.json on Git because they store all project dependencies and allow others to install the exact same setup.
+
+We don’t put node_modules, dist and .parcel-cache because:
+✅ node_modules can be regenerated using npm install.
+✅ dist and .parcel-cache are temporary/auto-generated files created by Parcel during build (npx parcel index.html).
+
+Only essential files should be tracked in Git. Auto-generated folders are ignored to keep the repository clean and lightweight.
+
+
+Conclusion 
+
+1) npm init 
+2) npm intsall -D parcel 
+--remove main file from package.json
+3) npx parcel index.html 
+now remoce cdn links and get react from npm using below commands
+npm install react
+npm install react-dom 
+Now import it in script file
+add type='module' in script file 
+4) npx parcel index.html
+4) npx parcel build index.html
+
+how much engineering goes behind the scenes when u build production ready application
 
 
 
