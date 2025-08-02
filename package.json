@@ -1,9 +1,11 @@
 {
-  "name": "reactbasics",
+  "name": "react-basics",
   "version": "1.0.0",
   "description": "This project is being made by Tushar Chaudhary",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -12,10 +14,9 @@
   "keywords": [
     "git",
     "github",
+    "jest",
     "babel",
-    "jsx",
-    "parcel",
-    "webpack"
+    "parcel"
   ],
   "author": "Tushar Chaudhary",
   "license": "ISC",
@@ -27,7 +28,7 @@
     "parcel": "^2.15.4"
   },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   }
 }

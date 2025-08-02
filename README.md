@@ -42,7 +42,7 @@ git push
                                                 
                                                 
                                                 
-                                                 ✅Inception✅ 
+                               ✅Inception✅ 
 
 1)  what is HTML Element?
 ✅ Answer:  A normal HTML tag which is directly shown in the browser when a webpage loads as part of the Real DOM.
@@ -62,15 +62,20 @@ git push
 
 ➡️ Yes, browser understands JavaScript because every browser has a JavaScript engine(like google chrome has v8) to run JS code.
 
-➡️ No, browser doesn’t understand React directly. We include/bring/import/inject React in our project (using CDN or npm), and React converts its code into normal JavaScript which browser can understand.
+➡️ The browser doesn’t understand React or JSX directly so we import/include/inject React into our project (using a CDN or npm), and then use tools like Babel to convert JSX into regular JavaScript, which the browser can understand and execute.
 
-5)  Does the order of <script> tags matter in HTML?
+React : JavsScript library
+JSX : HTML like syntax used in React
+Browser : Only understands plain JavaScript
+Babel :  Converts JSX ➝ JavaScript
+
+  Does the order of <script> tags matter in HTML?
  
-a)  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src='./app.js'></script>
 
-b)   <script src='./app.js'></script>
+   <script src='./app.js'></script>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
@@ -78,23 +83,52 @@ Ans) Yes, order matters.
      Because app.js uses React and ReactDOM. If they are not loaded first, it gives:
      Uncaught ReferenceError: React is not defined.
 
-5)  what is use of crossorigin in script?
-➡️ We use crossorigin so that the browser can safely load scripts from other websites (like CDN) without security issues.
+6)  what are CORS?
+Ans) CORS (Cross-Origin Resource Sharing) is a browser security feature that controls how a website can
+     request data from another website (external server) safely.
+     It allows or blocks cross-origin requests based on rules set by the server.
 
-6) what is CDN?
-➡️ CDN (Content Delivery Network) is a network of servers around the world that deliver files (like JS, CSS, images) faster to users.
-➡️ Instead of loading files from your server, the browser gets them from the nearest CDN server.
+7)   Why do we use crossorigin in CDN script files but not in local script files like app.js?
+Ans) App.js(Local file) = it has same origin = Browser loads it from internal server = no crossorigin needed.
+     script(External file) = it has different(crossorigin) = Browser safely loads it from external file = crossorigin needed to avoid security issues.
 
+     We use crossorigin so that the browser can safely load scripts from other websites (like CDN) without security issues.
+
+9)   Why browser needs crossorigin for scripts but not always for images?
+Ans) Scripts can run code so need crossorigin for safety. Images don’t run code, so no crossorigin is needed in most cases.
+
+
+6) what is Network ,Internet ,Server and CDN?
+Network is used to connect multiple devices so they can share information, either using the internet (like mobile data or Wi-Fi) or without internet (using Bluetooth or LAN).
+
+The internet is a global network that connects millions of smaller networks to share data between devices across the world.
+
+Network : connection
+Internet: Network of networks
+
+Server is the main computer that stores and sends the original website to users.
+
+🔧 When a server is down, it can be due to:
+    Power failure
+    Hardware issue
+    Software bug
+    Maintenance
+    Network issue on the server side
+
+➡️ CDN (Content Delivery Network) is a network of servers around the world that deliver website content to users fastly.
+
+➡️ Instead of always going to the main server, the browser gets the content from the nearest CDN server.
 
 Why this is important to use CDN?
-➡️ faster loading 
-➡️ less buffering
-➡️ Handling more viewers
-➡️ saves Bandwidth
+✅ Benefits of CDN:
+➡️ Faster loading
+➡️ Less buffering
+➡️ Can handle more users (scalability)
+➡️ Saves data and reduces load on the main server
 
-Example : when we watch utube videos , so the video data is coming from the nearby server which helps the video load faster and stream smoothly.
+Example : When you watch a YouTube video, it is delivered from the nearest CDN server, not from YouTube's main server in the U.S.
 
-7) Explain React.development.js and React.devlopment.js
+7) Explain React.development.js and React.development.js
 1) react.development.js
 This is the React core library ( creating element is the core of react).
 React creates and manages the component( like button or form).
@@ -103,24 +137,6 @@ React creates and manages the component( like button or form).
 This is the React DOM library which is useful for DOM operation.
 React DOM takes the component and render it on the webpage.
 
-8) ✅ Question:
-👉 Why do we use crossorigin in CDN script files but not in local script files like app.js?
-
-✅ Answer:
-👉 “App.js is a local file. It has the same origin. The browser loads it from the internal server, so no crossorigin is required.”
-
-👉 “CDN files are external files. They have a different origin (cross-origin). The browser loads them from an external server, so crossorigin is required to load the external file safely without any security issues.”
-
-“Local file = same origin = no crossorigin needed.
-External file = cross origin = crossorigin needed.”
-
-
-9) what are CORS?
-👉 CORS (Cross-Origin Resource Sharing) is a browser security feature that controls how a website can request data from another website (external server) safely.
-It allows or blocks cross-origin requests based on rules set by the server.
-
- 10) Why browser needs crossorigin for scripts but not always for images?
- ✅ Answer:) Scripts can run code so need crossorigin for safety. Images don’t run code, so no crossorigin is needed in most cases."
 
 
                                              
@@ -251,7 +267,7 @@ Error : Browser scripts(app.js) cannot have import or exports so we add type="mo
 Ans)  Parcel is a bundler and it takes HTML , CSS and JavaScript code and bundles them together and send it to the browser to run code.
 
 2) why do we use parcel in React projects?
-Because the browser doesn’t understand JSX. Parcel uses tools like Babel to convert JSX to JavaScript, bundles files, and runs the app.
+Because the browser doesn’t understand JSX. Parcel uses tools like Babel to convert/transpiles JSX to JavaScript, bundles files, and runs the app.
 
 
 1) Dev Build
@@ -336,7 +352,7 @@ Conclusion
 2) npm intsall -D parcel 
 --remove main file from package.json
 3) npx parcel index.html 
-now remoce cdn links and get react from npm using below commands
+now remove cdn links and get react from npm using below commands
 npm install react
 npm install react-dom 
 Now import it in script file
@@ -347,4 +363,61 @@ add type='module' in script file
 how much engineering goes behind the scenes when u build production ready application
 
 
+✅Laying the foundation✅
 
+Add below commands in scripts
+
+"start":"parcel index.html",
+"build":"parcel build index.html"
+
+npx parcel index.html
+npx parcel build index.html
+
+
+Now run below commands 
+
+for dev build : npm run start or npm start
+for prod build : npm run build
+
+
+Laying the foundation
+
+JSX is a syntax which looks like HTML but it is not HTML inside JavaScript.
+
+
+JSX => React.createElement => ReactElement(JS Object)
+ => HTMLElement(render)
+
+React Components
+
+1) class Based Component - old way
+2) functional component - new way
+
+
+functional Component
+
+Is is a javaScript function which return some piece of JSX.
+It is always start with capital letter.
+
+How to render React Component
+
+root.render(<ReactComponent/>)
+or
+root.render(<ReactComponent></ReactComponent>)
+
+Component Compostion
+
+
+
+Header
+  -Logo
+  -nav-items
+Body
+  -search
+  -RestaurantContainer
+   -RestaurantCard
+Footer
+  -Copyright
+  -Links
+  -Address
+  -Contact
